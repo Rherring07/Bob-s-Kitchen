@@ -1,0 +1,654 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+/******************************************
+/* COLORS
+/*******************************************/
+
+:root {
+     /* dark shades of primary color*/
+     --clr-primary-1: hsl(205, 86%, 17%);
+     --clr-primary-2: hsl(205, 77%, 27%);
+     --clr-primary-3: hsl(205, 72%, 37%);
+     --clr-primary-4: hsl(205, 63%, 48%);
+     /* primary/main color */
+     --clr-primary-5: hsl(205, 78%, 60%);
+     /* lighter shades of primary color */
+     --clr-primary-6: hsl(205, 89%, 70%);
+     --clr-primary-7: hsl(205, 90%, 76%);
+     --clr-primary-8: hsl(205, 86%, 81%);
+     --clr-primary-9: hsl(205, 90%, 88%);
+     --clr-primary-10: hsl(205, 100%, 96%);
+     /* darkest grey - used for headings */
+     --clr-grey-1: hsl(209, 61%, 16%);
+     --clr-grey-2: hsl(211, 39%, 23%);
+     --clr-grey-3: hsl(209, 34%, 30%);
+     --clr-grey-4: hsl(209, 28%, 39%);
+     /* grey used for paragraphs */
+     --clr-grey-5: hsl(210, 22%, 49%);
+     --clr-grey-6: hsl(209, 23%, 60%);
+     --clr-grey-7: hsl(211, 27%, 70%);
+     --clr-grey-8: hsl(210, 31%, 80%);
+     --clr-grey-9: hsl(212, 33%, 89%);
+     --clr-grey-10: hsl(210, 36%, 96%);
+     --clr-white: #fff;
+     --clr-red-dark: hsl(360, 67%, 44%);
+     --clr-red-light: hsl(360, 71%, 66%);
+     --clr-green-dark: hsl(125, 67%, 44%);
+     --clr-green-light: hsl(125, 71%, 66%);
+     --clr-black: #222;
+} 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+     font-size: 62.5%;
+     background: white;
+}
+
+*,
+::before,
+::after {
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     font-family: "Open Sans", sans-serif;
+     /* background: hsl(210, 36%, 96%); */
+     color: hsl(209, 61%, 16%);
+     line-height: 1.5;
+     font-size: 1.6rem;
+     max-width: 1600px;
+     border-right: 1px solid lightgrey;
+     border-right: 1px solid lightgrey;
+     box-shadow: 0px 0px 2px 2px lightgrey;
+     margin: 0 auto;
+}
+
+li {
+     list-style: none;
+}
+
+a {
+     text-decoration: none;
+     color: black;
+}
+
+.button {
+     border: red;
+     background: #cf2127;
+     border-radius: 100px;
+     padding: 1.6rem 2.6rem!important;
+     min-height: 50px;
+     letter-spacing: 0px;
+     color: white;
+     font-weight: 600;
+}
+.button:hover {
+     background: purple;
+}
+.link {
+     color:black !important;
+     font-weight: 600!important;
+}
+.link:hover {
+     color: #cf2127 !important;
+}
+.no-border {
+     border-bottom: none;
+}
+/* section {
+     border: 1px solid black;
+} */
+/******************************************
+/* LAYOUT - ALL
+/******************************************/
+/*************** HEADER ***************/
+#header-container {
+     height: 107px;
+     display: flex;
+     width: 100%;
+     align-items: center;
+     position: sticky;
+     top: 0;
+     z-index: 100;
+     background: white;
+     border-bottom: 1px solid lightgrey;
+}
+#container-flex {
+     padding: 0px 40px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+#header-logo {
+     display: flex;
+     align-items: center;
+}
+#header-nav {
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     width: 100%;
+}
+#header-nav-ul {
+     display: flex;
+     align-items: center;
+}
+#header-nav-ul a {
+     margin-right: 14px;
+     letter-spacing: 1px;
+     padding: 1rem 2rem;
+}
+
+/*************** Footer ***************/
+#footer {
+     height: 380px;
+     padding: 50px 40px 40px 40px;
+     border-top: 1px solid lightgrey;
+}
+#footer-nav {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+#footer-container {
+     display: flex;
+}
+#footer-logo {
+     flex: 16%;
+     max-width: 16%;
+}
+#menu-footer-container {
+     width: 100%;
+     display: flex;
+     flex: 55%;
+     max-width: 55%;
+}
+#menu-footer-container h6 {
+     font-size: 1.8rem;
+     margin-bottom: .8rem;
+}
+#menu-footer-ul {
+     width: 100%;
+     display: flex;
+     margin-block-end: 1rem;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+}
+.sub-menu {
+     width: 33%;
+}
+.footer-menu-item {
+     margin-bottom: 3px;
+}
+.footer-menu-item a{
+     color: grey;
+     font-weight: 500;
+}
+.footer-menu-item a:hover {
+     color: purple;
+}
+.menu-item {
+     color: white;
+}
+#footer-follow-us {
+     flex:  25%;
+     max-width: 25%;
+}
+#footer-follow-icons {
+     display: flex;
+     justify-content: flex-end;
+}
+#footer-follow-us h5 {
+     text-align: right;
+     font-size: 1.8rem;
+     font-weight: 700;
+     margin-bottom: .8rem;
+}
+
+#policies {
+     padding-top: 40px;
+     margin-top: 75px;
+     border-top: 1px solid #e27a7d;
+}
+#policies-ul {
+     width: 60%;
+     display: flex;
+}
+#policies-ul li {
+     padding: 0px 10px;
+}
+#policies-ul a:hover {
+     color: purple;
+}
+.policies-item:before {
+     content:  "・";
+     margin-right: 10px;
+}
+
+
+/*************** LOGO ***************/
+.logo {
+     font-size: 2rem;
+}
+
+/******************************************
+/* LAYOUT - HOME
+/******************************************/
+
+/*************** SPECIALS ***************/
+#special {
+     min-height: 600px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+#special-container {
+     width: 100%;
+     padding: 1rem 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+}
+.specials-background-image {
+     display: flex;
+     justify-content: center;
+     background:hsl(209, 61%, 16%, 40%);
+     color: white;
+     overflow: hidden;
+     position: relative;
+}
+.specials-img {
+     margin: 0 auto;
+     padding: 0;
+     max-width: 1600px;
+     overflow: hidden;
+     min-height: 600px;
+     position: absolute;
+     z-index: -20;
+}
+/*************** Highlights ***************/
+.highlights-img-container {
+     max-width: 1600px;
+     width: 100%;
+     min-height: 300px;
+     height: 100%;
+     font-size: 0;
+}
+.highlights-img {
+     min-height: 300px;
+     height: 100%;
+     width: 100%;
+     max-height: 800px;
+     filter: brightness(50%);
+     font-size: 0;
+}
+#highlights-container {
+     min-height: 300px;
+     position: absolute;
+     width: 100%;
+     max-height: 800px;
+     max-width: 1600px;
+     z-index: 10;
+}
+.highlights {
+     max-width: 1600px;
+     min-height: 300px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.highlights-title {
+     height: 40%;
+     width: 50%;
+     background-color: hsl(211, 39%, 23%,.6);
+     border-radius: 10px;
+     backdrop-filter: blur(50px);
+     padding: 10px 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 1rem;
+}
+.highlights-title h5 {
+     color: white;
+     font-size: clamp(1rem, 4vw, 4rem);
+}
+.resize-button {
+     font-size: 1.5rem;
+     height: 5px;
+     padding: .5rem, 1rem;
+}
+
+/* #highlights-one {
+     background-image: url("fresh-salad.jpg");
+     background-size: cover;
+} */
+/* #highlights-background-container {
+     min-height: 300px;
+     max-height: 800px;
+     max-width: 1600px;
+     display: flex;
+     align-items: center;
+     position: relative;
+     /* z-index: -5; */
+/*  */
+
+/* .highlights-img {
+     top:0;
+     left: 0;
+     position: absolute;
+     z-index: -10;
+     width: 100%;
+     height: 100%;
+} */
+
+.arrow {
+     height: 100%;
+     width: 100%;
+     width: 10px;
+}
+.arrow-button-left,
+.arrow-button-right {
+     position: absolute;
+     top: 47%;
+     margin: 5px;
+     padding: 5px;
+     background: hsl(209, 61%, 16%, .6);
+     border-radius: 40px;
+     padding: 20px;
+     border: none;
+}
+.arrow-button-left {
+     left: 0;
+}
+.arrow-button-right {
+     right: 0;
+}
+.arrow-button-left:hover,
+.arrow-button-right:hover {
+     cursor: pointer;
+     background: #cf2127;
+}
+#highlights-carousel-checker-container {
+     min-height: 50px;
+     background: black;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.carousel-checker {
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+}
+.carousel-checker-img {
+      width: 10px;
+      
+}
+/* color class for carousel img */
+.filter-blue {
+     filter: invert(13%) sepia(57%) saturate(654%) hue-rotate(167deg) brightness(46%) contrast(97%);
+}
+/*************** Catering and Hiring ***************/
+.container-hero {
+     min-height: 500px;
+     width: 100%;
+}
+#catering-and-hiring {
+     min-height: 500px;
+     display: flex;
+}
+#catering-and-hiring h5 {
+     font-size: 2rem;
+     color: white;
+}
+#catering-and-hiring span {
+     color: white;
+}
+#catering-container, 
+#hiring-container {
+     width: 50%;
+     padding: 40px 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+.cat-work-container {
+     z-index: -10;
+     display: flex;
+     max-width: 1600px;
+     width: 100%;
+     position: absolute;
+}
+.catering-image-container,
+.hiring-image-container {
+     display: flex;
+     flex:1;
+     min-height: 500px;
+     background:lightgrey;
+     justify-content: center;
+     align-items: center;
+}
+.catering-img,
+.working-img {
+     margin: 0 auto;
+     padding: 0;
+     width: 70%;
+     height: 75%;
+     filter:brightness(50%);
+     border-radius: 2rem;
+}
+/*************** Club Sign-Up ***************/
+#sign-up {
+     height: 400px;
+     display: flex;
+     gap: 2rem;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: hsl(205, 86%, 17%,30%) url("rewards.jpg");
+}
+#sign-up h2 {
+     font-size: 5rem;
+}
+
+/******************************************
+/* LAYOUT - Contact Us and Rewards
+/******************************************/
+
+/*************** Menu Nav ***************/
+/* #menu-nav-container-hero {
+     background: black;
+} */
+#menu-nav-container {
+     max-width: 1216px;
+     margin: 0 auto;
+     padding: 0 20px;
+     height: 70px;
+     color: white;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+}
+#menu-nav {
+     width: 100%;
+     min-height: 70px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid lightgrey;
+}
+.menu-nav-li {
+     min-height: 70px;
+     padding: 20px;
+     display: flex;
+     align-items: center;
+}
+.menu-button {
+     cursor: pointer;
+     background: transparent;
+     border: none;
+}
+.menu-button:hover {
+     color: purple;
+}
+#more {
+     margin-left: auto;
+}
+.calories {
+     color: #cf2127;
+}
+#menu-nav .new-and-featured {
+     border-bottom: 2px solid #cf2127;
+}
+/*************** New and Featured ***************/
+.featured-container {
+     min-height: 1000px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 3.2rem;
+     margin: 0 40px;
+     max-width: 1280px;
+}
+.featured-banner {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 150px;
+}
+.featured {
+     width: 31%;
+     height: 500px;
+     display: flex;
+     flex-direction: column;
+     gap: 3.2rem;
+}
+@media (max-width: 1000px) {
+     .featured {
+          width: 48%;
+     }
+}
+.featured-items {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: .5rem;
+}
+.featured-items > * {
+   flex: 1;
+   letter-spacing: 1px;
+}
+.menu-item-button {
+     margin-top: 8px;
+}
+/******************************************
+/* LAYOUT - COPYRIGHT
+/******************************************/
+
+#copyright-container-hero {
+     height: 500px;
+     padding: 20px 40px;
+     margin-top: 50px;
+     display: flex;
+}
+#copyright-nav {
+     display: flex;
+     justify-self: flex-start;
+     flex: 0 0 25%;
+     max-width: 25%;
+     padding-right: 20px
+}
+#copyright-nav-ul li{
+     padding-bottom: 18px;
+     padding-top: 7px;
+}
+.copyright-link:hover {
+     color: purple;
+}
+#copyright-container {
+     display: flex;
+     flex-direction: column;
+}
+#copyright-title-container {
+     padding-bottom: 25px;
+     border-bottom: 1px solid black;
+}
+#copyright-container h1 {
+     margin: 0;
+     padding: 0;
+     font-weight: 1000;
+}
+#copyright-container p {
+     padding-top: 25px;
+     color: grey;
+}
+
+
+/******************************************
+/* LAYOUT - Contact Us and Rewards
+/******************************************/
+#contact-us-title-container {
+     color: #cf2127;
+     padding-bottom: 25px;
+     border-bottom: 1px solid #cf2127;;
+}
+#contact-us-lorem  p{
+     color: black;
+}
+
+/******************************************
+/* LAYOUT - Story, Locations, News, Giftcards
+/******************************************/
+#story-container {
+     height: 500px;
+     padding: 0 40px;
+}
+#story-title-container {
+     color: #cf2127;
+     border-bottom: 1px solid #cf2127;;
+     display: flex;
+     justify-content: center;
+}
+#story-lorem {
+     display: flex;
+     justify-content: center;
+     padding: 40px;
+}
+#story-lorem  p{
+     color: black;
+}
+
+/******************************************
+/* Special
+/******************************************/
+
+.hidden   {
+     display: none !important;
+}
