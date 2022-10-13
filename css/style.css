@@ -273,6 +273,9 @@ a {
      align-items: center;
      gap: 1rem;
 }
+#special.container h2 {
+	font-size:  clamp(1rem, 4vw, 4rem);
+}
 .specials-background-image {
      display: flex;
      justify-content: center;
@@ -290,6 +293,7 @@ a {
      position: absolute;
      z-index: -20;
 }
+
 /*************** Highlights ***************/
 .highlights-img-container {
      max-width: 1600px;
