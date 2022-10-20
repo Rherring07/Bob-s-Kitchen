@@ -1,5 +1,15 @@
 
 
+//Header Hamburger
+let value = -1;
+let display;
+let menuHamburger = document.querySelector("#header-hamburger");
+menuHamburger.addEventListener("click", () => {
+    value == -1 ? display = "flex" : display = "none";
+    value *= -1;
+    document.querySelector(".header-hamburger-links").classList.toggle("show-links");
+
+})
 
 // Menu Change Page
 
